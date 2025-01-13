@@ -11,7 +11,7 @@ from sklearn.linear_model import LinearRegression
 # Definir a chave da API
 api_key = "api key"
 
-moeda = input("Digite o nome da moeda:" )
+moeda = input("Coin Name" )
 #raiz, obtem dados sobre a moeda
 def obter_dados_historicos(api_key):
     url = f"https://www.mercadobitcoin.net/api/{moeda}/trades/"
@@ -65,12 +65,12 @@ def main():
         if current_price is not None:
             future_price = model.predict(np.array([[current_price]]))
             if future_price > current_price:
-                print("""💸贉- compre""")
+                print("""💸贉- buy""")
             else:
                 print("""╲┏━┳━━━━━━━━┓╲╲
 ╲┃◯┃╭┻┻╮╭┻┻╮┃╲╲
 ╲┃╮┃┃╭╮┃┃╭╮┃┃╲╲
-╲┃╯┃┗┻┻┛┗┻┻┻┻╮╲ -venda
+╲┃╯┃┗┻┻┛┗┻┻┻┻╮╲ -sell
 ╲┃◯┃╭╮╰╯┏━━━┳╯╲
 ╲┃╭┃╰┏┳┳┳┳┓◯┃╲╲
 ╲┃╰┃◯╰┗┛┗┛╯╭┃╲╲ """)
